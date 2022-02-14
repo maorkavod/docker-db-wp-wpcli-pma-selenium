@@ -3,7 +3,7 @@ _os="`uname`"
 _now=$(date +"%m_%d_%Y")
 _file="wp-data/data_$_now.sql"
 
-# Export dump
+# Export dump backup database & we can also import an other db. 
 EXPORT_COMMAND='exec mysqldump "$MYSQL_DATABASE" -uroot -p"$MYSQL_ROOT_PASSWORD"'
 docker-compose exec db sh -c "$EXPORT_COMMAND" > $_file
 
